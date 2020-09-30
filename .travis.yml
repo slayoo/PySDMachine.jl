@@ -1,0 +1,12 @@
+language: shell
+
+install:
+  - apt-get install julia
+
+script:
+  - git clone https://github.com/CliMA/ClimateMachine.jl.git  
+  - julia --project -e 'using Pkg; Pkg.instantiate(;verbose=true)'
+  - julia --project -e 'using Pkg; Pkg.precompile()'
+  - julia --project -e 'using Pkg; Pkg.status()'
+  
+  - git clone https://github.com/atmos-cloud-sim-uj/PySDM.git
