@@ -13,12 +13,12 @@ on:
 
 jobs:
   build:
-    strategy:  
+    strategy:
       matrix:
         platform: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.platform }}
-    
-    steps:        
+
+    steps:
       - uses: actions/checkout@v2
       - uses: julia-actions/setup-julia@v1
         with:
@@ -29,10 +29,11 @@ jobs:
           python-version: 3.8
 
       - run: |
-          git clone --depth 1 https://github.com/CliMA/ClimateMachine.jl.git
-        
+          git clone --depth 1 --branch aj/KM_ncdf_output https://github.com/CliMA/ClimateMachine.jl.git
+
       - run: |
           cd ClimateMachine.jl
+          git checkout aj/KM_ncdf_output
           julia --project -e 'using Pkg; Pkg.instantiate(;verbose=true)'
           julia --project -e 'using Pkg; Pkg.precompile()'
           julia --project -e 'using Pkg; Pkg.status()'
@@ -44,4 +45,4 @@ jobs:
 
       - run: |
           cd PySDM
-          PYTHONPATH=. python -OO PySDM_examples/ICMW_2012_case_1/example.py 
+          PYTHONPATH=. python -OO PySDM_examples/ICMW_2012_case_1/example.py
