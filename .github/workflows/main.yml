@@ -37,8 +37,7 @@ jobs:
       - run: |
           cd $GITHUB_WORKSPACE
           git clone --depth 1 https://github.com/atmos-cloud-sim-uj/PySDM.git
-          pip install `fgrep numba PySDM/requirements.txt`
-          pip install `fgrep scipy PySDM/requirements.txt`
+          pip install -r PySDM/requirements.txt
 
       - run: |
           cd $GITHUB_WORKSPACE
