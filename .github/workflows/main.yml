@@ -20,23 +20,24 @@ jobs:
     
     steps:        
       - uses: actions/checkout@v2
-#       - uses: julia-actions/setup-julia@v1
-#         with:
-#           version: 1.5.1
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.5.1
 
       - uses: actions/setup-python@v1
         with:
           python-version: 3.8
 
-#       - run: |
-#           git clone --depth 1 https://github.com/CliMA/ClimateMachine.jl.git
+      - run: |
+          git clone --depth 1 https://github.com/CliMA/ClimateMachine.jl.git
         
-#       - run: |
-#           cd ClimateMachine.jl
-#           julia --project -e 'using Pkg; Pkg.instantiate(;verbose=true)'
-#           julia --project -e 'using Pkg; Pkg.precompile()'
-#           julia --project -e 'using Pkg; Pkg.status()'
-#           julia --color=yes --project test/Atmos/Parameterizations/Microphysics/KM_saturation_adjustment.jl
+      - run: |
+          cd ClimateMachine.jl
+          julia --project -e 'using Pkg; Pkg.instantiate(;verbose=true)'
+          julia --project -e 'using Pkg; Pkg.precompile()'
+          julia --project -e 'using Pkg; Pkg.status()'
+          julia --color=yes --project test/Atmos/Parameterizations/Microphysics/KM_saturation_adjustment.jl
+
       - run: |
           git clone --depth 1 https://github.com/atmos-cloud-sim-uj/PySDM.git
           pip install -r PySDM/requirements.txt
