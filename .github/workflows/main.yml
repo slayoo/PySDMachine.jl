@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.5.1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      
+      - name: Clone ClimateMachine.jl
+        run: git clone --depth 1 https://github.com/CliMA/ClimateMachine.jl.git
+
+      - name: Try Julia
+        run: julia -e 'println("Hello, World!")'
