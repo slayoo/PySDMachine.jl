@@ -33,7 +33,6 @@ jobs:
 
       - run: |
           cd ClimateMachine.jl
-          git checkout aj/KM_ncdf_output
           julia --project -e 'using Pkg; Pkg.instantiate(;verbose=true)'
           julia --project -e 'using Pkg; Pkg.precompile()'
           julia --project -e 'using Pkg; Pkg.status()'
