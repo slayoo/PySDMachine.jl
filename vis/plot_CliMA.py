@@ -28,7 +28,7 @@ def dry_density(rho, p, T, q_tot, q_vap, q_liq):
 
 # read the data
 # assumes there is only one aux and one state output file
-clima_output = "../ClimateMachine.jl/output/"
+clima_output = "../output/"
 for fname in os.listdir(clima_output):
     if fname.startswith("KinematicModel_DumpAux"):
         aux_f = clima_output + fname
