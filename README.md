@@ -4,3 +4,7 @@
 
 # PySDMachine.jl
 PySDM + ClimateMachine.jl
+
+# Example notebooks
+- vis/plot_CliMa.ipynb: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atmos-cloud-sim-uj/PySDMachine.jl/blob/master/vis/plot_CliMa.ipynb)    
+
