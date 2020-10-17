@@ -6,5 +6,7 @@
 PySDM + ClimateMachine.jl
 
 # Example notebooks
-- vis/plot_CliMa.ipynb: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atmos-cloud-sim-uj/PySDMachine.jl/blob/master/vis/plot_CliMa.ipynb)    
+- vis/plot_CliMa.ipynb: 
+  [![launch on mybinger.org](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/atmos-cloud-sim-uj/PySDMachine.jl.git/master?filepath=vis/plot_CliMa.ipynb) 
+  [![open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atmos-cloud-sim-uj/PySDMachine.jl/blob/master/vis/plot_CliMa.ipynb)    
 
