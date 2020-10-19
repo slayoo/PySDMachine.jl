@@ -48,5 +48,4 @@ jobs:
       - run: |
           cd PySDM
           julia -e 'using Pkg; Pkg.add("PyCall")'
-          julia -e 'using Pkg; Pkg.build("PyCall")'
           julia -e 'using PyCall; pushfirst!(PyVector(pyimport("sys")."path"), ""); example = pyimport("PySDM_examples.ICMW_2012_case_1.example"); example.main()'
