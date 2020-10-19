@@ -18,8 +18,7 @@ jobs:
   build:
     strategy:
       matrix:
-# TODO!        platform: [ubuntu-latest, macos-latest, windows-latest]
-        platform: [ubuntu-latest, windows-latest]
+        platform: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.platform }}
 
     steps:
@@ -48,5 +47,5 @@ jobs:
 
       - run: |
           cd PySDM
-          julia -e 'using Pkg; Pkg.add("PyCall")'
+          julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/JuliaPy/PyCall.jl"))'
           julia -e 'using PyCall; pushfirst!(PyVector(pyimport("sys")."path"), ""); example = pyimport("PySDM_examples.ICMW_2012_case_1.example"); example.main()'
