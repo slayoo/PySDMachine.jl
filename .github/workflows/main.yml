@@ -40,7 +40,8 @@ jobs:
 
       - run: |
           git clone --depth 1 https://github.com/atmos-cloud-sim-uj/PySDM.git
-          julia -e 'using Pkg; Pkg.add("Conda"); using Conda; Conda.pip_interop(true, env); Conda.pip("install -r", "PySDM/requirements.txt")'
+          julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/JuliaPy/Conda.jl"))'
+          julia -e 'using Conda; Conda.pip_interop(true); Conda.pip("install -r", "PySDM/requirements.txt")'
 
       - run: |
           cd PySDM
