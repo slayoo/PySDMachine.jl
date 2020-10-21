@@ -29,7 +29,7 @@ jobs:
           python-version: 3.8
 
       - run: |
-          git clone --depth 1 --branch aj/KM_ncdf_output https://github.com/CliMA/ClimateMachine.jl.git
+          git clone --depth 1 https://github.com/CliMA/ClimateMachine.jl.git
 
       - run: |
           cd ClimateMachine.jl
