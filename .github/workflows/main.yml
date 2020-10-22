@@ -31,7 +31,7 @@ jobs:
           python-version: 3.8
 
       - name: xcode-select
-        if: matrix.os == 'macos-latest'
+        if: matrix.platform == 'macos-latest'
         run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
 
       - run: |
